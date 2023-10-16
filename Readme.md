@@ -1,6 +1,6 @@
-# http://www.nhc.gov.cn/ Scraper
+# nhc.gov.cn Scraper
 
-This project is a Django-based RESTful API with Swagger documentation and a a web scraper for http://www.nhc.gov.cn/. 
+This project is a Django-based RESTful API(http://172.105.83.7/) with Swagger documentation and a a web scraper for http://www.nhc.gov.cn/. 
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ I did not use a headless browser [selenium or playwright] as we discussed so in 
 1. api
 2. scraper
 
-### Steps to run the api
+### Steps to run the api locally
 
 ```bash
 cd scraperApi
@@ -45,7 +45,7 @@ python3 manage.py runserver
 ```
 
 
-### Steps to run the scraper
+### Steps to run the scraper locally
 
  1. ```py
     python runner.py
