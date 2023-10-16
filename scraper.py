@@ -159,9 +159,8 @@ class NHCScraper(BScraper):
         page = 1
         category_id = None
 
-
-        # for testing purposes I have decreased the pagination [NB: This is done on purpose it is not a mistake, but you can change it to `while True` to scrape all the pages]
-        while page < 2:
+        # For testing purposes you can update the condition to something like this while page < 2:
+        while True:
                 if page == 1:
                     response = self.session.get(
                         self.current_url+".shtml",
