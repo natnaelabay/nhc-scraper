@@ -2,11 +2,21 @@
 
 This project is a Django-based RESTful API(http://172.105.83.7/) with Swagger documentation and a a web scraper for http://www.nhc.gov.cn/. 
 
+
+
 ## Getting Started
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## To explore the scraped data you can use the remote server
+
+- http://172.105.83.7/ - there is swagger installed
+
+or
+
+- http://172.105.83.7/admin - if you have the correct credentials
+
+## Prerequisites to set it up locally
 
 To run this project, you need to have the following software installed:
 
