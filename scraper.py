@@ -1,6 +1,6 @@
 import re
 import requests
-from abc import abstractmethod, ABC
+from abc import ABC
 from lxml import html
 import json
 from urllib.parse import urlparse
@@ -64,10 +64,9 @@ class NHCScraper(BScraper):
         ]
         self.current_url = self.start_urls_names[0]
 
-    def articles(self, response, category_id):
+    def process_articles(self, response, category_id):
         """
-        Xpath which will return list of articles selectors present on the start_url. 
-        It will be called by every start_url
+        Xpath will return list of articles selectors present on the start_url. 
         """
         tree = html.fromstring(response)
         _articles = tree.xpath("//div[@class='list']//ul//li")
@@ -155,7 +154,7 @@ class NHCScraper(BScraper):
             (str, int): response text, category_id
         """
 
-        pages = []
+        page_responses = []
         page = 1
         category_id = None
 
@@ -199,10 +198,10 @@ class NHCScraper(BScraper):
                                                     "name": title
                                                 })
                         category_id = _response.json()["id"]
-                    pages.append(response.text)
+                    page_responses.append(response.text)
                 page += 1
 
-        return (pages, category_id)
+        return (page_responses, category_id)
 
     def get_articles(self):
         """
@@ -211,7 +210,7 @@ class NHCScraper(BScraper):
         articles = self.process_pages()
         category_id = articles[1]
         for data in articles[0]:
-            self.articles(data, category_id)
+            self.process_articles(data, category_id)
 
     def process(self):
         """
