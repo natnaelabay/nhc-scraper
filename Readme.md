@@ -1,6 +1,6 @@
 # nhc.gov.cn Scraper
 
-This project is a Django-based RESTful API(http://172.105.83.7/) with Swagger documentation and a a web scraper for http://www.nhc.gov.cn/. 
+This project is a web scraper and a Django backend to manage the scraped data with Swagger documentation for http://www.nhc.gov.cn/. 
 
 
 
