@@ -87,12 +87,12 @@ class NHCScraper(BScraper):
                 ".//span[last()]/text()")[0]
             _article["category"] = category_id
 
-            # create article records for every article in the list [this is record does not contain the content]
+            # create article records for every article in the list [It will not contain the article content]
             try:
                 response = requests.post(
                     f"{self.server_url}api/articles/", data=_article)
             except:
-                print("================= article record not created ==================")
+                print("================= article creation failed ==================")
 
     def get_article_contents(self):
         """
@@ -106,9 +106,11 @@ class NHCScraper(BScraper):
 
             for article in response.json():
                 try:
+                    # make a get request to the article detail page
                     response = self.session.get(
                         article['url'], headers=self.headers)
                     if response.status_code == 200:
+                        # process the contents in the page
                         tree = html.fromstring(response.text)
                         _articles = tree.xpath(
                             "//div[@class='list']//div[@class='con']//p")
@@ -117,9 +119,12 @@ class NHCScraper(BScraper):
                             data.append(li.text_content())
                         article_id = article['id']
                         del article["id"]
+                        
                         try:
                             article["is_parsed"] = True
-                            article["status"] = 2
+                            article["status"] = 2 # Scraped successful status
+                            
+                            # convert the array of strings into a single string
                             article["content"] = '\n'.join(
                                 [s if s != "" else "\n" for s in data])
                             requests.patch(
@@ -129,7 +134,7 @@ class NHCScraper(BScraper):
                         except Exception as ex:
                             try:
                                 article["is_parsed"] = False
-                                article["status"] = 1  # Failed Parsing
+                                article["status"] = 1  # Failed Scraping status
                                 requests.patch(
                                     f"{self.server_url}api/articles/{article_id}/", data=article, headers=self.headers)
                                 print(
