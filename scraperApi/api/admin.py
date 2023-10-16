@@ -3,7 +3,7 @@ from .models import Category, Article
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'published_date', 'status', "is_scraped", 'url', )
+    list_display = ('title', 'published_date', 'status', "is_parsed", 'url', )
     list_filter = ('status',)  # Define the list filter for the 'status' field
 
 
