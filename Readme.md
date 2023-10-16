@@ -2,7 +2,7 @@
 
 This project is a web scraper and a Django backend to manage the scraped data with Swagger documentation for http://www.nhc.gov.cn/. 
 
-project setup link: https://share.vidyard.com/watch/kbskiHZLAAvwif7kHXDuyr?
+project setup link: [video](https://share.vidyard.com/watch/kbskiHZLAAvwif7kHXDuyr?)
 
 ## To explore the scraped data you can use the remote server
 
