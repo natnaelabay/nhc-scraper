@@ -8,7 +8,7 @@ project setup link: https://share.vidyard.com/watch/kbskiHZLAAvwif7kHXDuyr?
 
 - http://172.105.83.7/ - there is swagger installed
 or
-- http://172.105.83.7/admin - if you have the correct credentials
+- http://172.105.83.7/admin - if you have the correct credentials [I will share them with you]
 
 
 ## Getting Started
