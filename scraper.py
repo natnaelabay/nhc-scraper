@@ -166,7 +166,7 @@ class NHCScraper(BScraper):
         
         # For testing purposes you can update the condition to something like this while page < 2:
         while True:
-                if page == 83:
+                if page == 1:
                     response = self.session.get(
                         self.current_url+".shtml",
                         headers=self.headers,
