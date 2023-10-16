@@ -4,17 +4,17 @@ This project is a web scraper and a Django backend to manage the scraped data wi
 
 project setup link: https://share.vidyard.com/watch/kbskiHZLAAvwif7kHXDuyr?
 
+## To explore the scraped data you can use the remote server
+
+- http://172.105.83.7/ - there is swagger installed
+or
+- http://172.105.83.7/admin - if you have the correct credentials
+
+
 ## Getting Started
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-## To explore the scraped data you can use the remote server
-
-- http://172.105.83.7/ - there is swagger installed
-
-or
-
-- http://172.105.83.7/admin - if you have the correct credentials
 
 ## Prerequisites to set it up locally
 
