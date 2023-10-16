@@ -2,7 +2,7 @@
 
 This project is a web scraper and a Django backend to manage the scraped data with Swagger documentation for http://www.nhc.gov.cn/. 
 
-
+project setup link: https://share.vidyard.com/watch/kbskiHZLAAvwif7kHXDuyr?
 
 ## Getting Started
 
@@ -35,11 +35,6 @@ pip3 install -r requirements.txt
 
 I did not use a headless browser [selenium or playwright] as we discussed so in order to make the scraper work we need to steal some cookies from our browser.
 
-### Video setup links
-
-1. api
-2. scraper
-
 ### Steps to run the api locally
 
 ```bash
@@ -60,6 +55,6 @@ python3 manage.py runserver
  1. ```py
     python runner.py
     ```
-2. After copying the cookies from your browser paste it in the prompt from the above command
+2. After copying the cookies from your browser paste it in the prompt from the above command (in the network tab from one of the start_urls I have explained this in detail in the video)
 3. It will start scrapping and populating the database
-4. If you can use http://127.0.0.1/ to see the details
+4. If you can use http://127.0.0.1:8000/ to see the details using swagger or http://127.0.0.1:8000/admin using the dashboard
