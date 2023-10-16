@@ -162,16 +162,17 @@ class NHCScraper(BScraper):
         page_responses = []
         page = 1
         category_id = None
-
+        has_pagination = False
+        
         # For testing purposes you can update the condition to something like this while page < 2:
         while True:
-                if page == 1:
+                if page == 83:
                     response = self.session.get(
                         self.current_url+".shtml",
                         headers=self.headers,
                     )
                 else:
-                    if html.fromstring(response.text).xpath("//@div[id='page_div']"):
+                    if has_pagination:
                         response = self.session.get(
                             self.current_url + f"_{page}.shtml",
                             headers=self.headers,
@@ -191,6 +192,8 @@ class NHCScraper(BScraper):
                         page, self.current_url)
                     if not category_id:
                         tree = html.fromstring(response.text)
+                        if tree.xpath("//div[@id='page_div']"):
+                            has_pagination = True
                         if self.current_url.endswith("/list"):
                             title = tree.xpath(
                                 "//div[@class='list']//div[@class='index_title']//h3/text()")
