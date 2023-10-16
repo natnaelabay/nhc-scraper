@@ -24,20 +24,48 @@ To run this project, you need to have the following software installed:
 
 ### Installing
 
-You can install the required Python packages using `pip`:
+1. Clone the repository
 
 ```bash
-pip3 install -r requirements.txt
+git clone https://github.com/natnaelabay/nhc-scraper.git
 ```
 
+2. Create a virtual environment
 
-## Scraper
+```bash
+# linux
+python3 -m venv venv
 
-I did not use a headless browser [selenium or playwright] as we discussed so in order to make the scraper work we need to steal some cookies from our browser.
+# windows
+python -m venv venv
+
+```
+3. Activate virtual environment
+
+```bash
+
+# linux
+source venv/bin/activate
+
+# windows
+venv\Scripts\activate
+```
+
+4. Install requirements
+```bash
+
+# linux
+pip3 install -r requirements.txt
+
+# windows
+pip install -r requirements.txt
+```
 
 ### Steps to run the api locally
 
 ```bash
+
+# Linux
 cd scraperApi
 
 python3 manage.py migrate
@@ -47,8 +75,26 @@ python3 manage.py createsuperuser (it will ask you for username and password)
 python3 manage.py runserver
 
 # go to http://127.0.0.1:8000/admin and put in your username and password to see the dashboard
+
+#################################
+
+# Windows machine
+cd scraperApi
+
+python manage.py migrate
+
+python manage.py createsuperuser (it will ask you for username and password)
+
+python manage.py runserver
+
+# go to http://127.0.0.1:8000/admin and put in your username and password to see the dashboard
+
+
 ```
 
+## Scraper
+
+I did not use a headless browser or frameworks like [selenium or playwright] so in order to make the scraper work we need to steal some cookies from our browser.
 
 ### Steps to run the scraper locally
 
