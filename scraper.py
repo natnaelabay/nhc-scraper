@@ -32,34 +32,35 @@ class NHCScraper(BScraper):
         super().__init__()
         self.headers["Cookie"] = cookie
         
-        # you can uncomment the different urls and test them out
+        # you should use a few urls inorder to test it out because we are not using a headless browser
+        # the request will fail if you don't have a strong internet.
         self.start_urls_names = [
             "http://www.nhc.gov.cn/wjw/gfxwjj/list",
             "http://www.nhc.gov.cn/wjw/zcfg/list",
-            # "http://www.nhc.gov.cn/wjw/wnsj/list",
-            # "http://www.nhc.gov.cn/wjw/gztz/list",
-            # "http://www.nhc.gov.cn/wjw/zqyj/list",
-            # "http://www.nhc.gov.cn/wjw/zcjd/list",
-            # "http://www.nhc.gov.cn/gjhzs/pqt/new_list",
-            # "http://www.nhc.gov.cn/xcs/pqt/new_list",
-            # "http://www.nhc.gov.cn/rkjcyjtfzs/pqt/new_list",
-            # "http://www.nhc.gov.cn/zyjks/pqt/new_list",
-            # "http://www.nhc.gov.cn/fys/pqt/new_list",
-            # "http://www.nhc.gov.cn/lljks/pqt/new_list",
-            # "http://www.nhc.gov.cn/lljks/zcwj2/new_list",
-            # "http://www.nhc.gov.cn/sps/pqt/new_list",
-            # "http://www.nhc.gov.cn/yaozs/pqt/new_list",
-            # "http://www.nhc.gov.cn/qjjys/pqt/new_list",
-            # "http://www.nhc.gov.cn/ylyjs/new_index",
-            # "http://www.nhc.gov.cn/jws/pqt/new_list",
-            # "http://www.nhc.gov.cn/yzygj/pqt/new_list",
-            # "http://www.nhc.gov.cn/tigs/pqt/new_list",
-            # "http://www.nhc.gov.cn/fzs/pqt/new_list",
-            # "http://www.nhc.gov.cn/caiwusi/pqt/new_list",
-            # "http://www.nhc.gov.cn/guihuaxxs/zcwj2/zcwj",
-            # "http://www.nhc.gov.cn/renshi/pqt/new_list",
-            # "http://www.nhc.gov.cn/bgt/pqt/new_list",
-            # "http://www.nhc.gov.cn/wjw/jiany/list"
+            "http://www.nhc.gov.cn/wjw/wnsj/list",
+            "http://www.nhc.gov.cn/wjw/gztz/list",
+            "http://www.nhc.gov.cn/wjw/zqyj/list",
+            "http://www.nhc.gov.cn/wjw/zcjd/list",
+            "http://www.nhc.gov.cn/gjhzs/pqt/new_list",
+            "http://www.nhc.gov.cn/xcs/pqt/new_list",
+            "http://www.nhc.gov.cn/rkjcyjtfzs/pqt/new_list",
+            "http://www.nhc.gov.cn/zyjks/pqt/new_list",
+            "http://www.nhc.gov.cn/fys/pqt/new_list",
+            "http://www.nhc.gov.cn/lljks/pqt/new_list",
+            "http://www.nhc.gov.cn/lljks/zcwj2/new_list",
+            "http://www.nhc.gov.cn/sps/pqt/new_list",
+            "http://www.nhc.gov.cn/yaozs/pqt/new_list",
+            "http://www.nhc.gov.cn/qjjys/pqt/new_list",
+            "http://www.nhc.gov.cn/ylyjs/new_index",
+            "http://www.nhc.gov.cn/jws/pqt/new_list",
+            "http://www.nhc.gov.cn/yzygj/pqt/new_list",
+            "http://www.nhc.gov.cn/tigs/pqt/new_list",
+            "http://www.nhc.gov.cn/fzs/pqt/new_list",
+            "http://www.nhc.gov.cn/caiwusi/pqt/new_list",
+            "http://www.nhc.gov.cn/guihuaxxs/zcwj2/zcwj",
+            "http://www.nhc.gov.cn/renshi/pqt/new_list",
+            "http://www.nhc.gov.cn/bgt/pqt/new_list",
+            "http://www.nhc.gov.cn/wjw/jiany/list"
         ]
         self.current_url = self.start_urls_names[0]
 
